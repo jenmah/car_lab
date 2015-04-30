@@ -18,10 +18,15 @@ Car.prototype.paint = function(newColor){
 
 Car.prototype.start = function(state){
   this.state = 'on';
-}
+};
 
 Car.prototype.off = function(state){
   this.state = 'off';
+};
+
+Car.prototype.pickUp = function(passenger){
+  this.passengers.push(passenger);
 }
+
 
 module.exports=Car;
