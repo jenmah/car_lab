@@ -32,5 +32,8 @@ Car.prototype.pickUp = function(passenger){
     }
 }
 
+Car.prototype.dropOff = function(passenger){
+    this.passengers.splice(passenger);
+}
 
 module.exports=Car;
