@@ -25,7 +25,11 @@ Car.prototype.off = function(state){
 };
 
 Car.prototype.pickUp = function(passenger){
-  this.passengers.push(passenger);
+    if (this.state === 'on') {
+        this.passengers.push(passenger);
+    } else if (this.state === 'off') {
+        this.passengers = [];
+    }
 }
 
 
