@@ -33,7 +33,11 @@ Car.prototype.pickUp = function(passenger){
 }
 
 Car.prototype.dropOff = function(passenger){
-    this.passengers.splice(passenger);
+    if (this.state === 'off') {
+        this.passengers.push(passenger);
+    } else if (this.state === 'on') {
+        this.passengers.splice(passenger);
+    }
 }
 
 module.exports=Car;
