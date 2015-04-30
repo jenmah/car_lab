@@ -105,4 +105,11 @@ describe('Car', function(){
     });
   });
 
+  describe('#parkedCar', function(){
+    it('should make the car turn off when you are parked', function(){
+      myCar.parkedCar();
+      expect(myCar.parked).to.equal("yes");
+    });
+  });
+
 });

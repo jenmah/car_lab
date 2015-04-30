@@ -5,6 +5,7 @@ function Car(make, model, year, color){
   this.currentOwner = 'Manufacturer';
   this.passengers = [];
   this.color = '';
+  this.parked = 'yes';
 }
 
 Car.prototype.sale = function(newOwner){
@@ -37,6 +38,14 @@ Car.prototype.dropOff = function(passenger){
         this.passengers.push(passenger);
     } else if (this.state === 'on') {
         this.passengers.splice(passenger);
+    }
+}
+
+Car.prototype.parkedCar = function(parked){
+    if (this.parked === 'yes') {
+        this.state = 'off';
+    } else if (this.parked === 'no') {
+        this.state = 'on';
     }
 }
 
